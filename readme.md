@@ -1,4 +1,4 @@
-## DbTester
+## DbTester [![Build status](https://ci.appveyor.com/api/projects/status/vhh0lg8ll5h8umhh?svg=true)](https://ci.appveyor.com/project/diijon/dbtester)
 DbTester is a helper for integration testing of SQL Server databases.
 - Creates temporary databases and drops them after tests have completed
 - Runs all sql through [SQLCMD](https://msdn.microsoft.com/en-us/library/ms162773.aspx)
