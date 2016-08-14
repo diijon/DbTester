@@ -10,6 +10,13 @@
 		<description>A helper for integration testing of SQL Server databases.</description>
 		<language>en-US</language>
 		<tags>sql TDD test sqlcmd</tags>
+	  <dependencies>
+			<dependency id="Handlebars.Net" version="1.7.1" />
+			<dependency id="Microsoft.SqlServer.TransactSql.ScriptDom" version="13.0.1601.5" />
+			<dependency id="Serilog" version="2.0.0" />
+			<dependency id="Serilog.Sinks.ColoredConsole" version="2.0.0" />
+			<dependency id="ServiceStack.Text" version="4.0.62" />
+	  </dependencies>
   </metadata>
   <files>
   	<file src="bin\Release\DbTester.dll" target="lib\net40" />
