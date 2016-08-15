@@ -16,6 +16,11 @@ namespace DbTester
         	get { return _log; }
         	set {
         		_log = value;
+
+        		if (Process == null)
+        		{
+        			return;
+        		}
         		Process.Log = value;
         	}
         }
