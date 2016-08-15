@@ -5,7 +5,7 @@
 		<version>$version$</version>
 		<title>DbIntegrationTester</title>
 		<authors>Diijon</authors>
-		<licenseUrl>https://github.com/diijon/DbTester/blob/master/License.txt</licenseUrl>
+		<licenseUrl>https://github.com/diijon/DbTester/blob/master/LICENSE.txt</licenseUrl>
 		<projectUrl>https://github.com/diijon/DbTester</projectUrl>
 		<description>A helper for integration testing of SQL Server databases.</description>
 		<language>en-US</language>
