@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,19 +10,27 @@ namespace DbTester
 {
     public class ProcessHelpers : Contracts.IProcessHelpers
     {
-        public ILogger Log { get; set; }
+    	private ILogger _log;
+        public ILogger Log
+        {
+        	get { return _log; }
+        	set {
+        		_log = value;
+        		Process.Log = value;
+        	}
+        }
         public ProcessWrapper Process { get; set; }
         public ProcessHelpers(ILogger log)
         {
             Log = log;
-            Process = new ProcessWrapper();
+            Process = new ProcessWrapper(log);
         }
 
         public void StartProcess(string command, string workingDirectory = null)
         {
             var processInfo = new ProcessStartInfo();
             processInfo.FileName = "cmd.exe";
-            processInfo.Arguments = string.Format("/c {0}", command); 
+            processInfo.Arguments = string.Format("/c {0}", command);
             processInfo.CreateNoWindow = true;
             processInfo.UseShellExecute = false;
             processInfo.RedirectStandardError = true;
@@ -41,6 +49,11 @@ namespace DbTester
 
     public class ProcessWrapper
     {
+        public ILogger Log { get; set; }
+    	public ProcessWrapper(ILogger log) {
+    		Log = log
+    	}
+
         public virtual Process Start(ProcessStartInfo startInfo, string logStatement)
         {
             var process = Process.Start(startInfo);
