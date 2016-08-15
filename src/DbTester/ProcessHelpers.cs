@@ -51,7 +51,7 @@ namespace DbTester
     {
         public ILogger Log { get; set; }
     	public ProcessWrapper(ILogger log) {
-    		Log = log
+    		Log = log;
     	}
 
         public virtual Process Start(ProcessStartInfo startInfo, string logStatement)
